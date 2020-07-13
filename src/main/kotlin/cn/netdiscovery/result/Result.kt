@@ -8,7 +8,12 @@ package cn.netdiscovery.result
  * @date: 2020-07-13 11:28
  * @version: V1.0 <描述当前版本功能>
  */
-sealed class Result<out T, out E>
+sealed class Result<out T, out E> {
+    inline fun <X> fold(success: (T) -> X, failure: (E) -> X): X = when (this) {
+        is Success -> success(this.value)
+        is Failure -> failure(this.reason)
+    }
+}
 
 data class Success<out T>(val value: T) : Result<T, Nothing>()
 data class Failure<out E>(val reason: E) : Result<Nothing, E>()
