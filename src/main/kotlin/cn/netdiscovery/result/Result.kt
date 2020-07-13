@@ -18,6 +18,10 @@ sealed class Result<out T, out E> {
 data class Success<out T>(val value: T) : Result<T, Nothing>()
 data class Failure<out E>(val reason: E) : Result<Nothing, E>()
 
+fun <T : Any?> Result<T, *>.success(f: (T) -> Unit) = fold(f, {})
+
+fun <E : Exception> Result<*, E>.failure(f: (E) -> Unit) = fold({}, f)
+
 inline fun <T> resultFrom(block: () -> T): Result<T, Exception> =
     try {
         Success(block())
