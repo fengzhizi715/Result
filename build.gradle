@@ -24,7 +24,7 @@ compileTestKotlin {
 }
 
 buildscript {
-    ext.kotlin_version = '1.4.0'
+    ext.kotlin_version = '1.4.20'
     repositories {
         jcenter()
         mavenCentral()
@@ -39,7 +39,7 @@ publish{
     userOrg = 'fengzhizi715'
     groupId = 'cn.netdiscovery.result'
     artifactId = 'result'
-    publishVersion = '1.0.1'
+    publishVersion = '1.0.2'
     desc = 'A Result monad for Kotlin.'
     website = 'https://github.com/fengzhizi715/Result'
 }
