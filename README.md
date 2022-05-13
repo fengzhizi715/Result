@@ -19,5 +19,5 @@ A Result monad for Kotlin.
 ```
 
 ```groovy
-implementation 'com.github.fengzhizi715:Result:v1.0.3'
+implementation 'com.github.fengzhizi715:Result:v1.0.4'
 ```
